@@ -85,7 +85,7 @@ export const isCurrentSong = (song: Song): boolean => {
   // Asígnale a la variable isCurrent un true o un false dependiendo de si
   // la canción recibida es la actual
 
-  isCurrent = false; // Cambia esta línea por tu código
+  isCurrent = song.isCurrent; // Cambia esta línea por tu código
 
   return isCurrent;
 };
