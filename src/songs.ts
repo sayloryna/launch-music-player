@@ -17,9 +17,7 @@ export const isPlaylistFull = (songs: Song[]): boolean => {
   let isFull: boolean;
   // Asígnale a la variable isFull un true o un false dependiendo de si
   // el array de títulos recibido tiene 4 o más elementos
-
-  isFull = false; // Cambia esta línea por tu código
-
+  isFull = songs.length >= 4;
   return isFull;
 };
 
@@ -32,8 +30,16 @@ export const getErrorMessage = (errorCode: string): string => {
   // Éstos son los códigos de error y sus mensajes correspondientes:
   // - "exists": "La canción ya existe"
   // - "limit": "La playlist está llena"
-
-  errorMessage = ""; // Cambia esta línea por tu código
+  switch (errorCode) {
+    case "exists":
+      errorMessage = "La canción ya existe";
+      break;
+    case "limit":
+      errorMessage = "La playlist está llena";
+      break;
+    default:
+      errorMessage = "";
+  }
 
   return errorMessage;
 };
