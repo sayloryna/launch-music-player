@@ -1,9 +1,7 @@
-import { Song, existingSongs } from "./songsData";
+import { Song } from "./songsData";
 
 export const areSameSong = (song: Song, songTitle: string): boolean => {
-  let areSame: boolean;
-  areSame = song.title === songTitle;
-  return areSame;
+  return song.title === songTitle;
 };
 
 export const addSong = (song: Song, songs: Song[]): void => {
@@ -11,9 +9,7 @@ export const addSong = (song: Song, songs: Song[]): void => {
 };
 
 export const isPlaylistFull = (songs: Song[]): boolean => {
-  let isFull: boolean;
-  isFull = songs.length >= 4;
-  return isFull;
+  return songs.length >= 4;
 };
 
 export const getErrorMessage = (errorCode: string): string => {
@@ -32,22 +28,15 @@ export const getErrorMessage = (errorCode: string): string => {
 };
 
 export const getSongsCount = (songs: Song[]): number => {
-  let songsCount: number;
-  // Asígnale a la variable songsCount el número de canciones recibidas
-
-  songsCount = songs.length; // Cambia esta línea por tu código
-
-  return songsCount;
+  return songs.length;
 };
 
 export const removeSongByPosition = (songs: Song[], position: number): void => {
-  // Elimina del array de canciones recibido la canción que se encuentra en la posición recibida
   songs.splice(position, 1);
 };
 
 export const setCurrentSong = (song: Song): void => {
   song.isCurrent = true;
-  // Establece la canción recibida como canción actual
 };
 
 export const getNextSongPosition = (
@@ -63,7 +52,5 @@ export const getNextSongPosition = (
 };
 
 export const isCurrentSong = (song: Song): boolean => {
-  let isCurrent: boolean;
-  isCurrent = song.isCurrent;
-  return isCurrent;
+  return song.isCurrent;
 };
