@@ -44,11 +44,9 @@ export const getNextSongPosition = (
   currentSongPosition: number
 ) => {
   let nextSongPosition: number;
-  nextSongPosition = currentSongPosition + 1;
-  if (currentSongPosition + 1 === songs.length) {
-    nextSongPosition = 0;
-  }
-  return nextSongPosition;
+  return songs.length === currentSongPosition + 1
+    ? (nextSongPosition = 0)
+    : (nextSongPosition = currentSongPosition + 1);
 };
 
 export const isCurrentSong = (song: Song): boolean => {
