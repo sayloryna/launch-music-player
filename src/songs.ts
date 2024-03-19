@@ -43,10 +43,9 @@ export const getNextSongPosition = (
   songs: Song[],
   currentSongPosition: number
 ) => {
-  let nextSongPosition: number;
   return songs.length === currentSongPosition + 1
-    ? (nextSongPosition = 0)
-    : (nextSongPosition = currentSongPosition + 1);
+    ? 0
+    : currentSongPosition + 1);
 };
 
 export const isCurrentSong = (song: Song): boolean => {
